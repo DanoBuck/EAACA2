@@ -2,7 +2,7 @@
 
 echo "Starting to gather CPU data"
 
-echo "CO N idle" > results.dat
+echo "C0 N idle" > results.dat
 for i in {1..50}
 do
 	# Run the loadtest each time and increase the number of users
