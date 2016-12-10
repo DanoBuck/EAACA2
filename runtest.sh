@@ -6,10 +6,9 @@ echo "CO N idle" > results.dat
 for i in {1..50}
 do
 	# Run the loadtest each time and increase the number of users
-	./loadtest $i  &
-	idle=$(mpstat | awk 'END{print $12}')
+	timeout 7s ./loadtest $i &
+	idle=$(mpstat 6 1 | awk 'END{print $12}')
 	C0=$(cat synthetic.dat | wc -l)
-	mpstat >> mpstat.txt
 	echo $C0 $i $idle
 	echo "$C0 $i $idle" >> results.dat
 	
