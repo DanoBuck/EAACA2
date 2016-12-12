@@ -23,24 +23,24 @@ Di <- Ui / X0
 # R = (M / X0) - Z
 # M = 50 - Sessions / Users
 # What is Z?
-R <- (50 / X0) - 7
+R <- 50 / X0
 
 # Utilisation measured against number of sessions / users
 Ui_Vs_N_Plot <- function(Ui){
-	plot(Ui, type="l", main="Utilisation of CPU When Load Increases", xlab="Sessions / Users",ylab="Utilisation")
+	plot(Ui, type="l", main="Utilisation of CPU When Load Increases", xlab="Sessions / Users",ylab="Utilisation (Busy)")
 }
 
 # Service Demand measured against number of sessions / users
 Di_Vs_N_Plot <- function(Di){
-	plot(Di, type="l", main="Service Demand When Load Increases", xlab="Sessions / Users",ylab="Service Demand")
+	plot(Di, type="l", main="Service Demand When Load Increases", xlab="Sessions / Users",ylab="Service Demand (seconds per transaction)")
 }
 
 # Throughput measured against number of sessions / users
 X0_Vs_N_Plot <- function(X0){
-	plot(X0, type="l", main="System Throughput When Load Increases", xlab="Sessions / Users",ylab="Throughput")
+	plot(X0, type="l", main="System Throughput When Load Increases", xlab="Sessions / Users",ylab="Throughput (seconds)")
 }
 
 # Response Time measured against number of sessions / users
-R <- function(R){
-
+R_Vs_N_Plot <- function(R){
+	plot(X0, type="l", main="Response Time When Load Increases", xlab="Sessions / Users",ylab="Response Time (seconds)")
 }
