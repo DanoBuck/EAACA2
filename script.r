@@ -9,7 +9,7 @@ print(resultsData)
 
 # Utilisation - We minus 100 from the idle time of the CPU
 # to get the correct result for the utilisation
-Ui <- (100 - resultsData$idle) / 6
+Ui <- (100 - resultsData$idle) / 100
 
 # Throughput of system - Need to change this to 0
 # T = 7
