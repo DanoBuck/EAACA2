@@ -3,7 +3,7 @@
 # runtest.sh in Fedora
 
 # Read in results.dat and store in a variable
-resultsData <- data <- read.table("C:\\Users\\Daniel\\Desktop\\College Work\\EAA\\EAACA2\\results.dat", header=TRUE)
+resultsData <- read.table("C:\\Users\\Daniel\\Desktop\\College Work\\EAA\\EAACA2\\results.dat", header=TRUE)
 
 print(resultsData)
 
@@ -18,11 +18,8 @@ X0 <- resultsData$C0 / 7
 # Service Demand of system
 Di <- Ui / X0
 
-#Interactive Response Time
-# More work need ?? not quite sure ??
-# R = (M / X0) - Z
-# M = 50 - Sessions / Users
-# What is Z?
+# Littles Law to find R
+# N = RX0 but rearranged to R = N / X0 to find R
 R <- 50 / X0
 
 # Utilisation measured against number of sessions / users
@@ -44,3 +41,12 @@ X0_Vs_N_Plot <- function(X0){
 R_Vs_N_Plot <- function(R){
 	plot(X0, type="l", main="Response Time When Load Increases", xlab="Sessions / Users",ylab="Response Time (seconds)")
 }
+
+# Summary of data
+Ui_Summary <- summary(Ui)
+
+Di_Summary <- summary(Di)
+
+X0_Summary <- summary(X0)
+
+R_Summary <- summary(R)
